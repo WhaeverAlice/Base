@@ -7,6 +7,7 @@ using System.Linq;
 
 public class Elevator : MonoBehaviour
 {
+//perfect use of list
     private List<int> Floors = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     public bool Shabat;
     public int CurrentFloor;
@@ -63,8 +64,8 @@ public class Elevator : MonoBehaviour
             ShabatElevator(floors, shabat);
 
         }
-
-        else if (!(currentFloor == requestFloor))
+        //this also works and more readable
+        else if (currentFloor != requestFloor)
         {
             currentFloor -= GoToFloor(currentFloor, requestFloor);
             Debug.Log($"now at floor {currentFloor}");
